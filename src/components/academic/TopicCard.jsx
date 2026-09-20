@@ -87,10 +87,10 @@ export default function TopicCard({
 
   return (
     <div
-      className={`group relative rounded-xl border transition-all duration-200 p-4 sm:p-5 ${
+      className={`group relative rounded-xl border transition-all duration-200 p-4 sm:p-5 shadow-sm ${
         isCompleted
-          ? 'bg-emerald-950/20 border-emerald-800/40 hover:border-emerald-700/60'
-          : 'bg-slate-900/90 border-slate-800 hover:border-amber-500/40'
+          ? 'bg-emerald-50/50 border-emerald-200 hover:border-emerald-400'
+          : 'bg-white border-slate-200 hover:border-amber-400'
       }`}
     >
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3.5">
@@ -101,41 +101,41 @@ export default function TopicCard({
             type="button"
             onClick={handleCompleteClick}
             aria-label={isCompleted ? 'Mark as incomplete' : 'Mark as completed'}
-            className="mt-0.5 shrink-0 text-slate-500 hover:text-emerald-400 transition"
+            className="mt-0.5 shrink-0 text-slate-400 hover:text-emerald-600 transition"
           >
             {isCompleted ? (
-              <CheckCircle2 className="w-5 h-5 text-emerald-400 fill-emerald-400/20" />
+              <CheckCircle2 className="w-5 h-5 text-emerald-600 fill-emerald-100" />
             ) : (
-              <Circle className="w-5 h-5 text-slate-600 hover:text-slate-400" />
+              <Circle className="w-5 h-5 text-slate-300 hover:text-slate-500" />
             )}
           </button>
 
           <div className="min-w-0">
             <div className="flex items-center gap-2 mb-1 flex-wrap">
-              <span className="text-[11px] font-bold text-amber-400">
+              <span className="text-[11px] font-bold text-amber-700">
                 Topic {topicNumber}
               </span>
               {subtopicsCount > 0 && (
-                <span className="text-[10px] text-slate-400 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700/60">
+                <span className="text-[10px] text-slate-600 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
                   {subtopicsCount} Syllabus Sub-topics
                 </span>
               )}
               {isCompleted && (
-                <span className="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+                <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
                   Completed
                 </span>
               )}
             </div>
 
             {/* Official Topic Name */}
-            <h5 className="text-sm sm:text-base font-bold text-slate-100 group-hover:text-amber-400 transition tracking-tight">
+            <h5 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-amber-600 transition tracking-tight">
               <Link href={`/academic/topic/${id}`}>
                 {title}
               </Link>
             </h5>
 
             {description && (
-              <p className="text-xs text-slate-400 mt-1 line-clamp-2 leading-relaxed">
+              <p className="text-xs text-slate-600 mt-1 line-clamp-2 leading-relaxed">
                 {description}
               </p>
             )}
@@ -143,7 +143,7 @@ export default function TopicCard({
         </div>
 
         {/* Right Side: Bookmark & Start/Continue Button */}
-        <div className="flex items-center justify-between sm:justify-end gap-2.5 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-800/80">
+        <div className="flex items-center justify-between sm:justify-end gap-2.5 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-200">
           {/* Bookmark Toggle Button */}
           <button
             type="button"
@@ -151,12 +151,12 @@ export default function TopicCard({
             aria-label={isBookmarked ? 'Remove bookmark' : 'Bookmark topic'}
             className={`p-2 rounded-lg border transition ${
               isBookmarked
-                ? 'bg-amber-500/20 border-amber-500/40 text-amber-400'
-                : 'bg-slate-800/80 border-slate-700 text-slate-400 hover:text-white hover:border-slate-600'
+                ? 'bg-amber-50 border-amber-300 text-amber-600'
+                : 'bg-slate-50 border-slate-200 text-slate-400 hover:text-slate-700 hover:border-slate-300'
             }`}
           >
             {isBookmarked ? (
-              <BookmarkCheck className="w-4 h-4 fill-amber-400" />
+              <BookmarkCheck className="w-4 h-4 fill-amber-500 text-amber-600" />
             ) : (
               <Bookmark className="w-4 h-4" />
             )}
@@ -167,8 +167,8 @@ export default function TopicCard({
             href={`/academic/topic/${id}`}
             className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg font-bold text-xs transition duration-150 shadow-sm ${
               isCompleted
-                ? 'bg-slate-800 hover:bg-slate-700 text-slate-200'
-                : 'bg-amber-500 hover:bg-amber-400 text-slate-950 shadow-amber-500/10'
+                ? 'bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200'
+                : 'bg-amber-500 hover:bg-amber-600 text-slate-950'
             }`}
           >
             <span>{isCompleted ? 'Review Topic' : 'Start Topic'}</span>

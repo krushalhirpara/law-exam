@@ -1,5 +1,6 @@
 import '@/app/globals.css';
 import '@/app/tailwind-built.css';
+import '@/app/white-theme.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Link from 'next/link';

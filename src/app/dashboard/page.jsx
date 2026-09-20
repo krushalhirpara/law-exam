@@ -64,8 +64,8 @@ export default function StudentDashboardPage() {
 
   if (!mounted || loading) {
     return (
-      <div className="min-h-screen bg-slate-950 flex items-center justify-center text-slate-400 font-mono text-xs">
-        <RefreshCw className="w-5 h-5 animate-spin mr-2 text-amber-500" />
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center text-slate-600 font-mono text-xs">
+        <RefreshCw className="w-5 h-5 animate-spin mr-2 text-amber-600" />
         Loading Saurashtra University Student Dashboard...
       </div>
     );
