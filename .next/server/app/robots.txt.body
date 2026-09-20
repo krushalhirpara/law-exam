@@ -1,0 +1,15 @@
+User-Agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/*
+Disallow: /api/
+Disallow: /api/*
+Disallow: /dashboard
+Disallow: /dashboard/*
+Disallow: /private/
+Disallow: /user/
+Disallow: /account/
+Disallow: /chat/private/
+
+Host: https://lowstudy.com
+Sitemap: https://lowstudy.com/sitemap.xml
